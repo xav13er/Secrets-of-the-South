@@ -17,7 +17,7 @@ handlers.helloWorld = function (args, context) {
         inputValue = args.inputValue;
     log.debug("helloWorld executado com estes argumentos:", { input: args.inputValue });
 
-message += inputValue; 
+message += inputValue;
     // The value you return from a Cloud Script function is passed back
     // to the game client in the ExecuteCloudScript API response, along with any log statements
     // and additional diagnostic information, such as any errors returned by API calls or external HTTP
@@ -34,4 +34,19 @@ handlers.logTest = function(args, context) {
     log.error("This is... an error statement?", { why: "I'm here to fix the plumbing. Probably.", errCode: 123 });
 
     // http.request('https://httpbin.org/status/404', 'post', '', 'text/plain', null, true);
+};
+
+// this is to use title data
+handlers.ServerGetTitleData = function (args) {
+  PlayFabServerAPI.SetTitleData(
+        new SetTitleDataRequest {
+            Key = "Challenge_123125",
+            Value = "{"1":CD15E15CEC59DE6D}"  // this sets up a player that did this challenge
+        },
+        result => Debug.Log("Set Challenge_123125 successful."),
+        error => {
+            Debug.Log("Could not save the player that solved the Challenge_123125. Got error setting titleData:");
+            Debug.Log(error.GenerateErrorReport());
+        }
+    );
 };
