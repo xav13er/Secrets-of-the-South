@@ -28,9 +28,9 @@ handlers.helloWorld = function (args, context) {
 
 
 handlers.logTest = function(args, context) {
-    log.info("This is a log statement!");
-    log.debug("This is a debug statement.");
-    log.error("This is... an error statement?");
-    // the last parameter indicates we want logging on errors
-    http.request('https://httpbin.org/status/404', 'post', '', 'text/plain', null, true);
+    log.info("This is a log statement!", { what: "Here on business." });
+    log.debug("This is a debug statement.", { who: "I am a doctor, sir" });
+    log.error("This is... an error statement?", { why: "I'm here to fix the plumbing. Probably.", errCode: 123 });
+
+    // http.request('https://httpbin.org/status/404', 'post', '', 'text/plain', null, true);
 };
