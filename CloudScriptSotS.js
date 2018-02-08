@@ -49,6 +49,8 @@ handlers.ServerGetTitleData_backup = function (args) {
 // this is to use title data
 handlers.ServerSaveChallengeAndPlayersWhoSolvedIt = function (args) {
     
+    log.debug("ServerSaveChallengeAndPlayersWhoSolvedIt:", { input: args.inputValue });
+
     var request = {
         Key: args.challengeID,
         Value: args.players
