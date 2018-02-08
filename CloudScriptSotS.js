@@ -37,10 +37,20 @@ handlers.logTest = function(args, context) {
 };
 
 // this is to use title data
-handlers.ServerGetTitleData = function (args) {
+handlers.ServerGetTitleData_backup = function (args) {
     var request = {
         Key: "Challenge_123125",
         Value:"{\"1\":CD15E15CEC59DE6D}"
+    };
+
+    var playerStatResult = server.SetTitleData(request);
+};
+
+// this is to use title data
+handlers.ServerSaveChallengeAndPlayersWhoSolvedIt = function (args) {
+    var request = {
+        Key: args.challengeID,
+        Value: args.playersThatCompletedChallenge
     };
 
     var playerStatResult = server.SetTitleData(request);
