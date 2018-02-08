@@ -51,8 +51,19 @@ handlers.ServerSaveChallengeAndPlayersWhoSolvedIt = function (args) {
     
     var inputValue = null;
     if (args && args.hasOwnProperty("inputValue"))
+    {
         inputValue = args.inputValue;
     log.debug("ServerSaveChallengeAndPlayersWhoSolvedIt:", { input: inputValue });
+    }
+
+    if (args && args.hasOwnProperty("challengeID")) {
+        inputValue = args.challengeID;
+        log.debug("ServerSaveChallengeAndPlayersWhoSolvedIt:", { input: inputValue });
+    }
+    if (args && args.hasOwnProperty("players")) {
+        inputValue = args.players;
+        log.debug("ServerSaveChallengeAndPlayersWhoSolvedIt:", { input: inputValue });
+    }
 
     //log.debug("ServerSaveChallengeAndPlayersWhoSolvedIt:", { input: args.inputValue });
 
