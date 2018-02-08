@@ -49,20 +49,20 @@ handlers.ServerGetTitleData_backup = function (args) {
 // this is to use title data
 handlers.ServerSaveChallengeAndPlayersWhoSolvedIt = function (args) {
     
-    var inputValue = null;
+    //var inputValue = null;
     if (args && args.hasOwnProperty("inputValue"))
     {
         inputValue = args.inputValue;
-    log.debug("ServerSaveChallengeAndPlayersWhoSolvedIt:", { input: inputValue });
+        log.debug("inputValue found:", { input: args.inputValue });
     }
 
     if (args && args.hasOwnProperty("challengeID")) {
-        inputValue = args.challengeID;
-        log.debug("ServerSaveChallengeAndPlayersWhoSolvedIt:", { input: inputValue });
+        //inputValue = args.challengeID;
+        log.debug("challengeID found:", { input: args.challengeID });
     }
     if (args && args.hasOwnProperty("players")) {
-        inputValue = args.players;
-        log.debug("ServerSaveChallengeAndPlayersWhoSolvedIt:", { input: inputValue });
+        //inputValue = args.players;
+        log.debug("players found:", { input: args.players });
     }
 
     //log.debug("ServerSaveChallengeAndPlayersWhoSolvedIt:", { input: args.inputValue });
