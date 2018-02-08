@@ -48,9 +48,10 @@ handlers.ServerGetTitleData_backup = function (args) {
 
 // this is to use title data
 handlers.ServerSaveChallengeAndPlayersWhoSolvedIt = function (args) {
+    
     var request = {
         Key: args.challengeID,
-        Value: args.playersThatCompletedChallenge
+        Value: args.players
     };
 
     var playerStatResult = server.SetTitleData(request);
