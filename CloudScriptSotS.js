@@ -25,3 +25,12 @@ handlers.helloWorld = function (args, context) {
     // (https://api.playfab.com/playstream/docs/PlayStreamEventModels/player/player_executed_cloudscript)
     return { messageValue: message };
 };
+
+
+handlers.logTest = function(args, context) {
+    log.info("This is a log statement!");
+    log.debug("This is a debug statement.");
+    log.error("This is... an error statement?");
+    // the last parameter indicates we want logging on errors
+    http.request('https://httpbin.org/status/404', 'post', '', 'text/plain', null, true);
+};
