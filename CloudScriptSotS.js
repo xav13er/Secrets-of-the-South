@@ -38,15 +38,10 @@ handlers.logTest = function(args, context) {
 
 // this is to use title data
 handlers.ServerGetTitleData = function (args) {
-  PlayFabServerAPI.SetTitleData(
-        new SetTitleDataRequest {
-            Key = "Challenge_123125",
-            Value = "{"1":CD15E15CEC59DE6D}"  // this sets up a player that did this challenge
-        },
-        result => Debug.Log("Set Challenge_123125 successful."),
-        error => {
-            Debug.Log("Could not save the player that solved the Challenge_123125. Got error setting titleData:");
-            Debug.Log(error.GenerateErrorReport());
-        }
-    );
+    var request = {
+        Key: "Challenge_123125",
+        Value:"{\"1\":CD15E15CEC59DE6D}"
+    };
+
+    var playerStatResult = server.SetTitleData(request);
 };
