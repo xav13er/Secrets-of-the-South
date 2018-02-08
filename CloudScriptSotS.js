@@ -69,7 +69,7 @@ handlers.ServerSaveChallengeAndPlayersWhoSolvedIt = function (args) {
 
     var request = {
         Key: args.challengeID,
-        Value: "{\"1\":CD15E15CEC59DE6D}"
+        Value: args.players
     };
 
     var playerStatResult = server.SetTitleData(request);
